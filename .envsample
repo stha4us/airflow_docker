@@ -1,0 +1,2 @@
+AIRFLOW_UID= ##user id >> id -u
+AIRFLOW_GID=0
