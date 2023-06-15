@@ -60,7 +60,8 @@ with dag:
 
     dbt_run = BashOperator(
     task_id='dbt_run',
-    bash_command='cd /opt/airflow/dbt && dbt run',
+    bash_command='cd /opt/airflow/dbt && dbt seed --select ./seeds \
+        && dbt run --select ./models',
     dag=dag
 )
 
