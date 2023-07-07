@@ -19,12 +19,8 @@ models:
         tests:
           - unique
           - not_null
-
-   - name: dim_customers
-    description: "Sample dimension dbt model"
-    columns:
-      - name: id
-        description: "The primary key for this table"
-        tests:
-          - unique
-          - not_null
+          
+    
+    - name: iris_data
+    description: "View populated from seed Iris data source"
+   
