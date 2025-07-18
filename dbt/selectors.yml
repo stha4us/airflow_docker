@@ -1,0 +1,13 @@
+selectors:
+  - name: exclude_specific_models
+    description: "Runs all models except selected ones with this."
+    definition:
+      union:
+        - method: tag
+          value: nightly
+        - method: tag
+          value: nightly  # union of same is fine
+          children: true
+      exclude:
+        - method: tag
+          value: legacy
