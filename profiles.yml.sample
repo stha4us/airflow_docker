@@ -1,0 +1,24 @@
+# sample profiles.yml file
+test_datastore:
+  target: dev
+  outputs:
+    dev:
+      type: postgres
+      host: localhost
+      user: jondoe
+      password: <password>
+      port: 1234
+      dbname: test_db
+      schema: sandbox_schema
+      threads: 2
+
+    prod:  # additional prod target
+      type: postgres
+      host: prod.db.example.com
+      user: jondoe
+      password: <prod_password>
+      port: 1234
+      dbname: prod_db
+      schema: analytics
+      threads: 8
+
