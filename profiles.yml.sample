@@ -3,7 +3,7 @@ test_datastore:
   target: dev
   outputs:
     dev:
-      type: postgres
+      type: "{{ env_var('AIRFLOW_DATABASE') }}"
       host: localhost
       user: jondoe
       password: <password>
@@ -13,7 +13,7 @@ test_datastore:
       threads: 2
 
     prod:  # additional prod target
-      type: postgres
+      type: "{{ env_var('AIRFLOW_DATABASE') }}"
       host: prod.db.example.com
       user: jondoe
       password: <prod_password>
