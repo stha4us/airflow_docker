@@ -1,3 +1,12 @@
 AIRFLOW_UID= ##user id >> id -u
 AIRFLOW_GID=0
-AIRFLOW_DATABASE=snowflake
+ENVIRONMENT=dev
+DEV_DATABASE=snowflake
+DEV_USERNAME=sample@sample
+DEV_REDENTIALS=********
+
+PROD_DATABASE=snowflake
+PROD_USERNAME=sample@sample
+PROD_CREDENTIALS=********
+
+
