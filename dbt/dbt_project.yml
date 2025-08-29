@@ -40,7 +40,7 @@ models:
         schema: data_source
     marts:
        examples:
-        materialized: view
+        materialized: table
         schema: examples
 
 seeds:
