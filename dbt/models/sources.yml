@@ -1,0 +1,14 @@
+version: 2
+
+sources:
+  - name: sample_landing_table # A logical name for the source
+    database: {{target.database}}    # The physical database name (optional if same as target DB)
+    schema: {{target.schema}} # The physical schema name
+    tables:
+      - name: sample_landing_table # The name of the raw table
+        description: 'Sample raw table direct from landing data lake.'
+        # You can add tests and freshness checks here
+        loaded_at_field: _etl_loaded_at
+        freshness:
+          warn_after: {count: 12, period: day}
+          error_after: {count: 24, period: day}
