@@ -36,15 +36,15 @@ models:
     # Config indicated by + and applies to all files under models/example/
     source:
       data_source:
-        materialized: view
-        schema: data_source
+        +materialized: view
+        +schema: data_source
     marts:
        examples:
-        materialized: table
-        schema: examples
+        +materialized: table
+        +schema: examples
 
 seeds:
   dbt_airflow:
     samples:
-      schema: samples
+      +schema: samples
 
