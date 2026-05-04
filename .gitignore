@@ -1,4 +1,5 @@
 .env
+.venv/
 logs/**/*
 plugins/**/*
 dags/__pycache__

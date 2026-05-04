@@ -5,4 +5,10 @@ DATABASE=snowflake
 USERNAME=sample@sample
 CREDENTIALS=********
 
-
+# --- dbt Postgres ---
+DBT_PASSWORD=Your password
+DBT_HOST=Postgres hostname
+DBT_USER=username
+DBT_DBNAME=postgres
+DBT_PORT=5432
+DBT_SCHEMA=public
