@@ -1,5 +1,5 @@
 # sample profiles.yml file
-test_datastore:
+dbt_airflow_docker:
   target: dev
   outputs:
     "{{ env_var('ENVIRONMENT') }}":
@@ -11,5 +11,6 @@ test_datastore:
       dbname: test_db
       schema: sandbox_schema
       threads: 2
+      sslmode:require
 
 
