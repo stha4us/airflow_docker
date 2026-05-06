@@ -3,11 +3,12 @@ selectors:
     description: "Runs all models except selected ones with these tags."
     definition:
       union:
-        - method: tag
-          value: test
-        - method: tag
-          value: static_files  # union of same is fine
-          children: true
-      exclude:
-        - method: tag
-          value: legacy
+        - union:
+          - method: tag
+            value: test
+          - method: tag
+            value: static_files  # union of same is fine
+            children: true
+          exclude:
+            - method: tag
+              value: legacy
