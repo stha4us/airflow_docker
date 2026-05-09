@@ -1,14 +1,11 @@
 AIRFLOW_UID= ##user id >> id -u
 AIRFLOW_GID=0
 ENVIRONMENT=dev
-DATABASE=snowflake
-USERNAME=sample@sample
-CREDENTIALS=********
 
 # --- dbt Postgres ---
-DBT_PASSWORD=Your password
-DBT_HOST=Postgres hostname
-DBT_USER=username
-DBT_DBNAME=postgres
+DBT_PASSWORD=<Your password>
+DBT_HOST=<Postgres hostname>
+DBT_USER=<Your username>
+DBT_DBNAME=<postgres>
 DBT_PORT=5432
 DBT_SCHEMA=public
