@@ -1,4 +1,10 @@
-{{ config(materialized='table') }}
+{{ 
+    config(
+        materialized='table', 
+        meta={
+            'run_started_at': run_started_at.strftime('%Y-%m-%d %H:%M:%S')
+        }) 
+}}
 
 -- Use the `ref` function to select from other models
 

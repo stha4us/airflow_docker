@@ -48,3 +48,10 @@ seeds:
     samples:
       +schema: samples
 
+config:
+  meta:
+    custom_metadata:
+      owner: "BI Team"
+      description: "This project contains models for enterpise reporting and analytics."
+      last_updated: "{{ run_started_at.strftime('%Y-%m-%d') }}"
+
