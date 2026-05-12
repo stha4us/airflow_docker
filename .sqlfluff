@@ -1,0 +1,21 @@
+[sqlfluff]
+dialect = snowflake
+templater = dbt
+sql_file_exts = .sql
+max_line_length = 140
+runaway_limit = 10
+large_file_skip_byte_limit = 100000
+
+[sqlfluff:templater:dbt]
+project_dir = .
+profiles_dir = ~/.dbt
+profile = dev
+
+[sqlfluff:rules]
+L006 = True   # Commas at end of line
+L008 = True   # Group by spacing
+L010 = True   # Keywords casing consistency
+L026 = True   # Prefer explicit join conditions
+L048 = True   # Consistent keyword alignment
+
+capitalisation_policy = upper

@@ -1,0 +1,8 @@
+# dbt outputs
+target/
+
+# dbt packages
+dbt_packages/
+
+# logs
+logs/
