@@ -1,0 +1,51 @@
+# models/staging/schema.yml
+version: 2
+
+models:
+
+  # ─── Staging ────────────────────────────────────────────────────────────────
+
+  - name: stg_iris
+    description: >
+      Cleaned and validated Iris dataset with a deterministic 80/20 train/test split.
+      Source is the iris_raw seed CSV. Adds a surrogate key and split column.
+    columns:
+      - name: iris_id
+        description: Surrogate key (row number ordered by feature values)
+        tests:
+          - unique
+          - not_null
+
+      - name: sepal_length
+        description: Sepal length in cm
+        tests:
+          - not_null
+
+      - name: sepal_width
+        description: Sepal width in cm
+        tests:
+          - not_null
+
+      - name: petal_length
+        description: Petal length in cm
+        tests:
+          - not_null
+
+      - name: petal_width
+        description: Petal width in cm
+        tests:
+          - not_null
+
+      - name: species
+        description: Iris species — target label for classification
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['setosa', 'versicolor', 'virginica']
+
+      - name: split
+        description: Whether row is in train or test split
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['train', 'test']

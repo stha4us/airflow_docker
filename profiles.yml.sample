@@ -12,5 +12,28 @@ dbt_airflow_docker:
       schema: sandbox_schema
       threads: 2
       sslmode:require
+    
+    dev:
+      type: bigquery
+      method: oauth                  
+      project: GCP_PROJECT_ID   
+      dataset: iris_dev              
+      location: australia-southeast1                   
+      threads: 4
+      timeout_seconds: 300
+      priority: interactive
+
+    prod:
+      type: bigquery
+      method: service-account
+      project: GCP_PROJECT_ID
+      dataset: iris_prod
+      keyfile: /path/to/service_account.json
+      location: australia-southeast1
+      threads: 8
+      timeout_seconds: 600
+      priority: interactive
+
+    
 
 
