@@ -34,6 +34,9 @@ clean-targets:         # directories to be removed by `dbt clean`
 models:
   dbt_airflow_docker:
     # Config indicated by + and applies to all files under models/example/
+    staging:
+      +schema: staging
+      +materialized: view
     source:
       data_source:
         +materialized: view
@@ -55,3 +58,5 @@ config:
       description: "This project contains models for enterpise reporting and analytics."
       last_updated: "{{ run_started_at.strftime('%Y-%m-%d') }}"
 
+vars:
+  gcp_project: "GCP_PROJECT_ID"   # e.g. "my-gcp-project-123"
