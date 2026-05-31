@@ -1,0 +1,41 @@
+version: 2
+
+models:
+
+- name: iris_predictions
+  description: >
+    BQML predictions on the hold-out test set. Includes per-class
+    probability scores and a correctness flag for accuracy analysis.
+  columns:
+    - name: iris_id
+      tests:
+        - unique
+        - not_null
+    - name: predicted_species
+      tests:
+        - not_null
+        - accepted_values:
+            values: ['setosa', 'versicolor', 'virginica']
+    - name: is_correct
+      tests:
+        - not_null
+
+  - name: iris_evaluation
+    description: >
+      Aggregated model evaluation metrics from ML.EVALUATE plus a manual
+      accuracy cross-check from the predictions table.
+
+  - name: iris_feature_importance
+    description: >
+      Feature attribution scores from ML.GLOBAL_EXPLAIN. Higher score 
+      = more important feature for the classifier.
+    columns:
+      - name: feature
+        tests:
+          - unique
+          - not_null
+
+  - name: iris_classifier
+    description: >
+      Training iteration metrics (loss, eval_loss, learning_rate) from
+      ML.TRAINING_INFO for the trained classifier.

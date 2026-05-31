@@ -42,9 +42,8 @@ models:
         +materialized: view
         +schema: data_source
     marts:
-       examples:
-        +materialized: table
-        +schema: examples
+      +materialized: table
+      +schema: examples
 
 seeds:
   dbt_airflow_docker:

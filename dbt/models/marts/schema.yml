@@ -21,6 +21,29 @@ models:
           - not_null
           
     
-    - name: iris_data
+  - name: iris_data
     description: "View populated from seed Iris data source"
+
+  - name: iris_training_data
+    description: 80% training split used to train the BQML classifier.
+    columns:
+      - name: iris_id
+        tests:
+          - unique
+          - not_null
+      - name: species
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['setosa', 'versicolor', 'virginica']
+
+  - name: iris_test_data
+    description: 20% hold-out test split used for model evaluation.
+    columns:
+      - name: iris_id
+        tests:
+          - unique
+          - not_null
+
+  
    
