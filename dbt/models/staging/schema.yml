@@ -2,9 +2,6 @@
 version: 2
 
 models:
-
-  # ─── Staging ────────────────────────────────────────────────────────────────
-
   - name: stg_iris
     description: >
       Cleaned and validated Iris dataset with a deterministic 80/20 train/test split.
